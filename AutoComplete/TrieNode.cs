@@ -1,12 +1,9 @@
-﻿namespace AutoComplete
-{
+﻿using System.Collections.Generic;
+
+namespace AutoComplete;
+
     public class TrieNode
     {
-        public char Value;
-
-        public TrieNode(char value)
-        {
-            Value = value;
-        }
-    }
+    public Dictionary<char, TrieNode> ChildNodes { get; set; } = new();
+    public bool IsEndOfWord { get; set; }
 }
