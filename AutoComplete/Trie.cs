@@ -28,8 +28,30 @@ namespace AutoComplete;
 
         public bool Remove(string word)
         {
-            // This function is optional
-            throw new NotImplementedException();
+        var chars = word.ToCharArray();
+        var tempNode = Root;
+        if (!IsExist(chars)) return false;
+        for (var i = 0; i < chars.Length; i++)
+        {
+            if (tempNode.ChildNodes.Keys.Count != 1) continue;
+            tempNode.ChildNodes = new Dictionary<char, TrieNode>();
+            return true;
         }
+
+        return false;
+    }
+
+    private bool IsExist(char[] chars)
+    {
+        var tempNode = Root;
+        foreach (var c in chars)
+        {
+            if (!tempNode.ChildNodes.ContainsKey(c))
+                return false;
+
+            tempNode = tempNode.ChildNodes[c];
+        }
+
+        return true;
     }
 }
