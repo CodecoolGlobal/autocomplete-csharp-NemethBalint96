@@ -2,17 +2,17 @@
 
 namespace AutoComplete;
 
-    public class Trie
+public class Trie
+{
+    public TrieNode Root;
+
+    public Trie()
     {
-        public TrieNode Root;
-
-        public Trie()
-        {
         Root = new TrieNode();
-        }
+    }
 
-        public void Insert(string word)
-        {
+    public void Insert(string word)
+    {
         var chars = word.ToCharArray();
         var tempNode = Root;
         foreach (var c in chars)
@@ -24,10 +24,10 @@ namespace AutoComplete;
         }
 
         tempNode.IsEndOfWord = true;
-        }
+    }
 
-        public bool Remove(string word)
-        {
+    public bool Remove(string word)
+    {
         var chars = word.ToCharArray();
         var tempNode = Root;
         if (!IsExist(chars)) return false;

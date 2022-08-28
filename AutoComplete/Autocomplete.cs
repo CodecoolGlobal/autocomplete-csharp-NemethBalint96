@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AutoComplete;
 
-    public class Autocomplete : Trie
+public class Autocomplete : Trie
+{
+    public List<string> GetMatches(string prefix)
     {
-        public List<string> GetMatches(string prefix)
-        {
         var possibleCompleteWords = new List<string>();
         if (!IsPrefix(prefix.ToCharArray())) return possibleCompleteWords;
         var tempNode = GetLastNodeOfPrefix(prefix.ToCharArray());

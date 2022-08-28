@@ -1,6 +1,6 @@
-using System.IO;
 using Newtonsoft.Json;
 using NUnit.Framework;
+using System.IO;
 
 namespace AutoComplete.Test
 {
@@ -49,7 +49,7 @@ namespace AutoComplete.Test
         public void TestAfterInsertAutocomplete_GetMatchesCanFindItByAutocomp()
         {
             _autocomplete.Insert("autocomplete");
-            var expected = new[] {"autocomplete"};
+            var expected = new[] { "autocomplete" };
             CollectionAssert.AreEquivalent(expected, _autocomplete.GetMatches("autocomp"));
         }
 

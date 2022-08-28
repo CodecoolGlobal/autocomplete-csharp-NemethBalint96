@@ -2,8 +2,8 @@
 
 namespace AutoComplete;
 
-    public class TrieNode
-    {
+public class TrieNode
+{
     public Dictionary<char, TrieNode> ChildNodes { get; set; } = new();
     public bool IsEndOfWord { get; set; }
 }

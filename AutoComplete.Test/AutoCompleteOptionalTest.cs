@@ -44,7 +44,7 @@ namespace AutoComplete.Test
             _autocomplete.Insert("autocomplete");
             _autocomplete.Remove("trie");
 
-            var expected = new[] {"auto", "autocomplete"};
+            var expected = new[] { "auto", "autocomplete" };
             CollectionAssert.AreEquivalent(expected, _autocomplete.GetMatches("auto"));
         }
     }
